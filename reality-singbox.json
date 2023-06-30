@@ -18,17 +18,17 @@
 			"users": [
 				{
 					"uuid": "db7ba30e-5163-407e-bbe6-14c5555a7e57",
-					"name": "db7ba30e-5163-407e-bbe6-14c5555a7e57@hiddify.com",
+					"name": "db7ba30e-5163-407e-bbe6-14c5555a7e57@t.com",
 					"flow": "xtls-rprx-vision"
 				}
 			],
 			"tls": {
 				"enabled": true,
-				"server_name": "hostdl.com",
+				"server_name": "www.speedtest.com",
 				"reality": {
 					"enabled": true,
 					"handshake": {
-						"server": "hostdl.com",
+						"server": "www.speedtest.com",
 						"server_port": 443
 					},
 					"private_key": "2EGNLLrRzLth0GBacFz7KQk6oLsOhXRyOYnwaK4mm1M",
@@ -54,7 +54,7 @@
 			"users": [
 				{
 					"uuid": "db7ba30e-5163-407e-bbe6-14c5555a7e57",
-					"name": "db7ba30e-5163-407e-bbe6-14c5555a7e57@hiddify.com",
+					"name": "db7ba30e-5163-407e-bbe6-14c5555a7e57@t.com",
 					"flow": ""
 				}
 			],
@@ -66,11 +66,11 @@
 			},
 			"tls": {
 				"enabled": true,
-				"server_name": "hostdl.com",
+				"server_name": "www.speedtest.com",
 				"reality": {
 					"enabled": true,
 					"handshake": {
-						"server": "hostdl.com",
+						"server": "www.speedtest.com",
 						"server_port": 443
 					},
 					"private_key": "2EGNLLrRzLth0GBacFz7KQk6oLsOhXRyOYnwaK4mm1M",
