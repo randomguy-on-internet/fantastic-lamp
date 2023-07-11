@@ -1,20 +1,27 @@
 #!/bin/bash
 
 # Download and extract Sing-Box
-curl -Lo /root/sb https://github.com/SagerNet/sing-box/releases/download/v1.2.7/sing-box-1.2.7-linux-amd64.tar.gz &&
-tar -xzf /root/sb &&
-cp -f /root/sing-box-*/sing-box /root &&
-rm -r /root/sb /root/sing-box-* &&
-chown root:root /root/sing-box &&
+curl -Lo /root/sb https://github.com/SagerNet/sing-box/releases/download/v1.2.7/sing-box-1.2.7-linux-amd64.tar.gz
+wait
+tar -xzf /root/sb
+wait
+cp -f /root/sing-box-*/sing-box /root
+wait
+rm -r /root/sb /root/sing-box-*
+wait
+chown root:root /root/sing-box
+wait
 chmod +x /root/sing-box
-
+wait
 # Download Sing-Box configuration file
 curl -Lo /root/sing-box_config.json https://raw.githubusercontent.com/randomguy-on-internet/fantastic-lamp/main/reality-singbox.json
 
 # Download Sing-Box service file and reload systemd
-curl -Lo /etc/systemd/system/sing-box.service https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box.service &&
+curl -Lo /etc/systemd/system/sing-box.service https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box.service
+wait
 systemctl daemon-reload
 
 # Enable and start Sing-Box service
-systemctl enable --now sing-box && sleep 0.2 &&
+systemctl enable --now sing-box && sleep 0.2
+wait
 systemctl status sing-box
