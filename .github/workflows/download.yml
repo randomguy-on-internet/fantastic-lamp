@@ -1,9 +1,9 @@
 name: Xray Download and Upload
 
 on:
-  workflow_dispatch: # Allows manual triggering
+  workflow_dispatch: 
   schedule:
-    - cron: "0 0 * * *" # Runs daily at midnight UTC
+    - cron: "0 0 * * *" 
 
 jobs:
   download_and_upload:
@@ -21,6 +21,8 @@ jobs:
           
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false 
 
       - name: Download Xray
         run: |
@@ -28,6 +30,14 @@ jobs:
           curl -sL -o Xray-windows-64.zip $URL
           unzip Xray-windows-64.zip xray.exe
           rm Xray-windows-64.zip
+
+      - name: Add xray.exe to repository
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add xray.exe
+          git commit -m "Add xray.exe"
+          git push
 
       - name: Upload xray.exe
         uses: actions/upload-artifact@v2
