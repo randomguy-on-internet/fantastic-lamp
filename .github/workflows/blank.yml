@@ -1,0 +1,26 @@
+name: Xray
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  download_and_upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Download Xray
+        run: |
+          URL="https://github.com/XTLS/Xray-core/releases/download/v1.8.3/Xray-windows-64.zip"
+          curl -sL -o Xray-windows-64.zip $URL
+          unzip Xray-windows-64.zip xray.exe
+          rm Xray-windows-64.zip
+
+      - name: Upload xray.exe
+        uses: actions/upload-artifact@v2
+        with:
+          name: xray-executable
+          path: ./xray.exe
