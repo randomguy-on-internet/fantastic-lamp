@@ -1,9 +1,9 @@
 name: Xray Download and Upload
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch: # Allows manual triggering
   schedule:
-    - cron: "0 0 * * *" 
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
 
 jobs:
   download_and_upload:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          persist-credentials: false 
+          persist-credentials: false # We don't need to persist credentials for the push step
 
       - name: Download Xray
         run: |
@@ -37,7 +37,8 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add xray.exe
           git commit -m "Add xray.exe"
-          git push
+          git remote add origin_with_token "https://${{ secrets.PAT }}@github.com/${{ github.repository }}"
+          git push --set-upstream origin_with_token ${{ github.ref }}
 
       - name: Upload xray.exe
         uses: actions/upload-artifact@v2
