@@ -11,7 +11,7 @@ chmod +x /root/sing-box
 curl -Lo /root/sing-box_config.json https://raw.githubusercontent.com/randomguy-on-internet/fantastic-lamp/main/reality-singbox.json
 
 # Download Sing-Box service file and reload systemd
-curl -Lo /etc/systemd/system/sing-box.service https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box.service &&
+curl -Lo /etc/systemd/system/sing-box.service https://raw.githubusercontent.com/randomguy-on-internet/fantastic-lamp/main/sing-box.service &&
 systemctl daemon-reload
 
 # Enable and start Sing-Box service
