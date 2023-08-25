@@ -13,7 +13,6 @@
 			"sniff": true,
 			"sniff_override_destination": true,
 			"domain_strategy": "prefer_ipv4",
-			//"proxy_protocol": true,
 			"type": "vless",
 			"users": [
 				{
@@ -24,11 +23,11 @@
 			],
 			"tls": {
 				"enabled": true,
-				"server_name": "www.speedtest.net",
+				"server_name": "speed.cloudflare.com",
 				"reality": {
 					"enabled": true,
 					"handshake": {
-						"server": "www.speedtest.net",
+						"server": "speed.cloudflare.com",
 						"server_port": 443
 					},
 					"private_key": "2EGNLLrRzLth0GBacFz7KQk6oLsOhXRyOYnwaK4mm1M",
@@ -66,11 +65,11 @@
 			},
 			"tls": {
 				"enabled": true,
-				"server_name": "www.speedtest.net",
+				"server_name": "speed.cloudflare.com",
 				"reality": {
 					"enabled": true,
 					"handshake": {
-						"server": "www.speedtest.net",
+						"server": "speed.cloudflare.com",
 						"server_port": 443
 					},
 					"private_key": "2EGNLLrRzLth0GBacFz7KQk6oLsOhXRyOYnwaK4mm1M",
