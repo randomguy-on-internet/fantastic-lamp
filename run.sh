@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /root
 # Download and extract Sing-Box
-curl -Lo /root/sb https://github.com/SagerNet/sing-box/releases/download/v1.3.6/sing-box-1.3.6-linux-amd64.tar.gz &&
+curl -Lo /root/sb https://github.com/SagerNet/sing-box/releases/download/v1.5.2/sing-box-1.5.2-linux-amd64.tar.gz &&
 tar -xzf /root/sb &&
 cp -f /root/sing-box-*/sing-box /root &&
 rm -r /root/sb /root/sing-box-* &&
